@@ -39,7 +39,11 @@ const config = {
         screenshot: 'only-on-failure',
         trace: 'retain-on-failure',
         video: 'retain-on-failure',
-        ...devices['Desktop Chrome']
+        baseURL: 'https://rahulshettyacademy.com/api/ecom',
+        extraHTTPHeaders :{
+          'Accept': 'application/json',
+          'Content-Type' :'application/json'
+        }
       }
     },
     {
