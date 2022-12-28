@@ -1,5 +1,4 @@
-const {test, expect} = require("@playwright/test");
-const loginData = JSON.parse(JSON.stringify(require('../Utils/data/login.json')));
+const {test} = require("@playwright/test");
 const { POManager } = require('../objects/POManager');
 const {APIMethods} = require("../objects/apiObjects/APIMethods");
 const loginData = JSON.parse(JSON.stringify(require('../Utils/data/login.json')));
