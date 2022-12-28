@@ -19,7 +19,7 @@ test.describe("Select Product via different ways of login",()=>
 
     test("Login via API and Inject the token in local storage",async ({page,request ,baseURL})=>{
         const apiContext = new APIMethods(request , baseURL);
-        const response = await apiContext.login(loginData)
+        const response = await apiContext.getUserRegAndLoginAPI().login(loginData)
         await page.addInitScript(
             tokenValue => window.localStorage.setItem('token',tokenValue),response.token
         )
