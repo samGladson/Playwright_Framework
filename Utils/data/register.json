@@ -1,0 +1,12 @@
+{
+  "firstName": "Sam",
+  "lastName": "Gladson",
+  "userEmail": "SanGladsom@mailinator.com",
+  "userRole": "customer",
+  "occupation": "Engineer",
+  "gender": "Male",
+  "userMobile": "9150741662",
+  "userPassword": "Test@123",
+  "confirmPassword": "Test@123",
+  "required": true
+}
