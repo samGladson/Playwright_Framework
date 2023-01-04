@@ -9,12 +9,23 @@ on:
           - Regression
           - API
           - UI
+        type: choice
+        default: Smoke
+        required : true
       Browser:
         description: 'Select the Browser'
         options:
           - firefox
           - chrome
           - safari
+        type: choice
+        default: chrome
+        required : true
+      report_generation:
+        description: 'Do you want to Generate Report?'
+        type: boolean
+        required: true
+
 
 jobs:
   test:
@@ -30,9 +41,9 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests in Chrome
-      run: npx playwright test --project=chrome
+      run: npx playwright test --grep ${{inputs.Testing_Types}} --project=${{inputs.Browser}}
+      if: ${{inputs.report_generation}}
     - uses: actions/upload-artifact@v3
-      if: always()
       with:
         name: playwright-report
         path: playwright-report/
