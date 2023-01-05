@@ -42,8 +42,8 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests in Chrome
       run: npx playwright test --grep ${{inputs.Testing_Types}} --project=${{inputs.Browser}}
-      if: ${{inputs.report_generation}}
     - uses: actions/upload-artifact@v3
+      if: ${{inputs.report_generation}}
       with:
         name: playwright-report
         path: playwright-report/
